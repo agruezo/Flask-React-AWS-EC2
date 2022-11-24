@@ -6,12 +6,19 @@
 
 <h3>Part 1</h3>
 
-
+- Create a production Dockerfile that uses multistage Docker builds
+- Utilize Amazon Elastic Container Registry (ECR) to store built images
+- Configure CodeBuild to run when code is checked in to GitHub
+- Run unit and integrations tests and check code for quality and formatting issues on CodeBuild
 
 <h3>Part 2</h3>
 
-
-
+- Configure RDS for data persistence
+- Configure an Application Load Balancer (ALB) along with ECS to run a set of microservices
+- Send container logs to CloudWatch
+- Update a running container via a zero-downtime deployment strategy to not disrupt the current users or your application
+- Use AWS Fargate with ECS to deploy a microservice
+- Spin up AWS infrastructure via Terraform
 
 ---
 
