@@ -9,7 +9,7 @@ configure_aws_cli() {
     echo "AWS Configured!"
 }
 
-register_definitions() {
+register_definition() {
     if revision=$(aws ecs register-task-definition --cli-input-json "$task_def" | $JQ '.taskDefinition.taskDefinitionArn'); then
         echo "Revision: $revision"
     else
