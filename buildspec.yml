@@ -16,7 +16,7 @@ phases:
         if expr "$CODEBUILD_WEBHOOK_TRIGGER" == "branch/main" >/dev/null && expr "CODEBUILD_WEBHOOK_HEAD_REF" == "refs/head/main" >/dev/null; then
           DOCKER_TAG=prod
         else
-          DOCKER_TAG=${CODEBUILD_RESOVLED_SOURCE_VERSION}
+          DOCKER_TAG=${CODEBUILD_RESOLVED_SOURCE_VERSION}
         fi
       - echo "Docker tag:" $DOCKER_TAG
       - docker pull $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/test-driven-users:$DOCKER_TAG || true
