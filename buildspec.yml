@@ -55,7 +55,7 @@ phases:
           -f services/client/Dockerfile.prod \
           -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/test-driven-client:$DOCKER_TAG \
           ./services/client
-  # 
+  
   post_build:
     commands:
     - echo pushing prod images to ecr
