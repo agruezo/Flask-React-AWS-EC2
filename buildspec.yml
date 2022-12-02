@@ -13,7 +13,7 @@ phases:
         aws ecr get-login-password --region $AWS_REGION \
           | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
       - |
-        if expr "$CODEBUILD_WEBHOOK_TRIGGER" == "branch/main" >/dev/null && expr "CODEBUILD_WEBHOOK_HEAD_REF" == "refs/head/main" >/dev/null; then
+        if expr "$CODEBUILD_WEBHOOK_TRIGGER" == "branch/main" >/dev/null && expr "CODEBUILD_WEBHOOK_HEAD_REF" == "refs/heads/main" >/dev/null; then
           DOCKER_TAG=prod
         else
           DOCKER_TAG=${CODEBUILD_RESOLVED_SOURCE_VERSION}
