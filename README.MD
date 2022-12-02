@@ -16,7 +16,7 @@
 - Configure RDS for data persistence
 - Configure an Application Load Balancer (ALB) along with ECS to run a set of microservices
 - Send container logs to CloudWatch
-- Update a running container via a zero-downtime deployment strategy to not disrupt the current users or your application
+- Update a running container via a zero-downtime deployment strategy to not disrupt the current users your application
 - Use AWS Fargate with ECS to deploy a microservice
 - Spin up AWS infrastructure via Terraform
 

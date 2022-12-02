@@ -26,7 +26,7 @@ def test_admin_view_dev():
 def test_admin_view_prod():
     os.environ["FLASK_ENV"] = "production"
 
-    assert os.environ["FLASK_ENV"] == "production"
+    assert os.getenv("FLASK_ENV") == "production"
 
     app = create_app()
     app.config.from_object("src.config.TestingConfig")
