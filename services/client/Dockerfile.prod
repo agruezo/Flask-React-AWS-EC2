@@ -3,6 +3,9 @@
 # pull official base image
 FROM public.ecr.aws/docker/library/node:18-alpine as builder
 
+# use this to pull base image for Fargate
+# FROM --platform=linux/amd64 public.ecr.aws/docker/library/node:18-alpine as builder
+
 # set working directory
 WORKDIR /usr/src/app
 
@@ -28,6 +31,9 @@ RUN npm run build
 # FINAL #
 
 FROM public.ecr.aws/docker/library/nginx:stable-alpine
+
+# use this to pull base image for Fargate
+# FROM --platform=linux/amd64 public.ecr.aws/docker/library/nginx:stable-alpine
 
 # update nginx conf
 RUN rm -rf /etc/nginx/conf.d

@@ -1,6 +1,10 @@
 # pull official base image
 FROM public.ecr.aws/docker/library/python:3.10.3-slim-buster
 
+# use this pull image for Fargate
+# FROM --platform=linux/amd64 public.ecr.aws/docker/library/python:3.10.3-slim-buster
+
+
 # set working directory
 WORKDIR /usr/src/app
 
@@ -27,3 +31,7 @@ COPY . .
 
 # run server
 CMD gunicorn -b 0.0.0.0:5000 manage:app
+
+# add entrypoint.prod.sh for Fargate
+# COPY ./entrypoint.prod.sh .
+# RUN chmod +x /usr/src/app/entrypoint.prod.sh

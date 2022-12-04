@@ -8,7 +8,9 @@ afterEach(cleanup);
 
 it("renders properly", () => {
   const { getByText } = render(<About />);
-  expect(getByText("Add something relevant here.")).toHaveClass("content");
+  expect(
+    getByText("Deploying a Flask and React Microservice to AWS EC2")
+  ).toHaveClass("title");
 });
 
 it("renders", () => {
